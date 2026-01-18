@@ -16,14 +16,14 @@ jobs:
       runs-on: [ 'windows-2022' ]
 
       steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.0
+      - uses: actions/checkout@v6.0.1
+      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.2
         with:
-          cmake-version: '3.30.3'
+          cmake-version: '4.2.0'
           target-os: 'windows-2022'
-      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
         with:
-            python3-version: '13'
+            python3-version: '15'
             operating-system: 'windows-2022'
 
       - name: project-building
@@ -44,14 +44,14 @@ jobs:
       runs-on: [ 'macos-14' ]
 
       steps:
-      - uses: actions/checkout@v4.2.2
-      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.0
+      - uses: actions/checkout@v6.0.1
+      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.2
         with:
-          cmake-version: '3.30.3'
+          cmake-version: '4.2.0'
           target-os: 'macos-14'
-      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
         with:
-            python3-version: '13'
+            python3-version: '14' # FIXME: introduce python 3.15 support when it will be avaialable for brew
             operating-system: 'macos-14'
 
       - name: building

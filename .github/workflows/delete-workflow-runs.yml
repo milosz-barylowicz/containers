@@ -7,4 +7,4 @@ on:
 
 jobs:
   call-delte-outdated-workflows-run:
-    uses: milosz-barylowicz/cpp-projects-github-actions/.github/workflows/delete-outdated-workflow-runs.yml@v1.0.0
+    uses: milosz-barylowicz/cpp-projects-github-actions/.github/workflows/delete-outdated-workflow-runs.yml@v1.0.2
