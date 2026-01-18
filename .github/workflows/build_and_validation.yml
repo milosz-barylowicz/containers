@@ -18,20 +18,20 @@ jobs:
     runs-on: [ 'ubuntu-24.04' ]
 
     steps:
-    - uses: actions/checkout@v5.0.0
-    - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+    - uses: actions/checkout@v6.0.1
+    - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
       with:
-        python3-version: '13'
+        python3-version: '15'
         operating-system: 'ubuntu-24.04'
 
     - name: python3-venv
       run: |
-        python3.13 -m venv venv && \
+        python3.15 -m venv venv && \
         source venv/bin/activate
 
-    - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.0
+    - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.2
       with:
-        cmake-version: '3.30.3'
+        cmake-version: '4.2.0'
         target-os: 'ubuntu-24.04'
 
     - name: CMake-configuration-and-project-building
@@ -50,20 +50,20 @@ jobs:
     runs-on: [ 'ubuntu-24.04' ]
 
     steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+      - uses: actions/checkout@v6.0.1
+      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
         with:
-            python3-version: '13'
+            python3-version: '15'
             operating-system: 'ubuntu-24.04'
 
       - name: python3-venv
         run: |
-          python3.13 -m venv venv && \
+          python3.15 -m venv venv && \
           source venv/bin/activate
 
-      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.0
+      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.2
         with:
-          cmake-version: '3.30.3'
+          cmake-version: '4.2.0'
           target-os: 'ubuntu-24.04'
 
       - name: asan-execution
@@ -93,20 +93,20 @@ jobs:
     runs-on: [ 'ubuntu-24.04' ]
 
     steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+      - uses: actions/checkout@v6.0.1
+      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
         with:
-            python3-version: '13'
+            python3-version: '15'
             operating-system: 'ubuntu-24.04'
 
       - name: python3-venv
         run: |
-          python3.13 -m venv venv && \
+          python3.15 -m venv venv && \
           source venv/bin/activate
 
-      - uses:  milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.0
+      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.2
         with:
-          cmake-version: '3.30.3'
+          cmake-version: '4.2.0'
           target-os: 'ubuntu-24.04'
 
       - name: valgrind-setting-up
@@ -129,19 +129,19 @@ jobs:
     runs-on: [ 'ubuntu-24.04' ]
 
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v6.0.1
       - uses: de-vri-es/setup-git-credentials@v2.1.2
         with:
           credentials: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
         with:
-            python3-version: '13'
+            python3-version: '15'
             operating-system: 'ubuntu-24.04'
 
       - name: python3-venv
         run: |
-          python3.13 -m venv venv && \
+          python3.15 -m venv venv && \
           source venv/bin/activate
 
       - name: clang-format-execution
@@ -159,20 +159,20 @@ jobs:
     runs-on: [ 'ubuntu-24.04' ]
 
     steps:
-      - uses: actions/checkout@v5.0.0
-      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.0
+      - uses: actions/checkout@v6.0.1
+      - uses: milosz-barylowicz/cpp-projects-github-actions/python3-upgrade@v1.0.2
         with:
-            python3-version: '13'
+            python3-version: '15'
             operating-system: 'ubuntu-24.04'
 
       - name: python3-venv
         run: |
-          python3.13 -m venv venv && \
+          python3.15 -m venv venv && \
           source venv/bin/activate
 
-      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.0
+      - uses: milosz-barylowicz/cpp-projects-github-actions/cmake-upgrade@v1.0.2
         with:
-          cmake-version: '3.30.3'
+          cmake-version: '4.2.0'
           target-os: 'ubuntu-24.04'
 
       - name: project-building
@@ -188,7 +188,7 @@ jobs:
           ls -la ${{ env.BUILD_DIR }}/code-coverage
 
       - name: code-coverage-raport-preaparing-to-publish
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-pages-artifact@v4.0.0
         with:
             path: "${{ env.BUILD_DIR }}/code-coverage"
 
